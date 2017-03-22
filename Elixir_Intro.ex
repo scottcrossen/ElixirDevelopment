@@ -8,7 +8,7 @@ defmodule Elixir_Intro do
 
   def area(:rectangle,{width, height}) do width*height end
   def area(:square, width) do width*width end
-  def area(:circle, radius) do :math.pi*radius*2 end
+  def area(:circle, radius) do :math.pi*radius*radius end
   def area(:triangle, {base, height}) do base*height/2 end
 
   def sqrList(nums) do Enum.map(nums, fn x -> x * x end) end
