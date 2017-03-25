@@ -26,7 +26,7 @@ defmodule NameServer do
  
   def init(_) do
     mymap=%{}
-    {mymap}
+    {:ok, mymap}
   end
  
   def handle_call({:register, name}, pid, mymap) do
