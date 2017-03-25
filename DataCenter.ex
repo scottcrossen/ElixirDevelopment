@@ -37,7 +37,7 @@ defmodule NameServer do
   def handle_call({:resolve, name}, _, mymap) do
     result=Map.fetch(mymap, name)
     if is_tuple(result) do
-      {:reply, elem(result,0), mymap}
+      {:reply, elem(result,1), mymap}
     else
       {:reply, result, mymap}
     end
@@ -48,9 +48,16 @@ defmodule NameServer do
   end
  
   def handle_cast({:register, name}, pid, mymap) do
-    spawn fn -> Map.put_new(mymap, name, pid) end
+    mymap=Map.put(mymap,name,pid)
+    {:reply, :ok, mymap}
   end
  
+  def handle_cast({:register, name, pid}, mymap) do
+    mymap=Map.put(mymap, name, pid)
+    {:noreply, mymap}
+    # spawn fn -> Map.put_new(mymap, name, pid) end
+  end
+
   def handle_cast(request, state) do
     super(request, state)
   end
@@ -112,4 +119,3 @@ defmodule Slave2 do
     supervise(children, strategy: :one_for_all)
   end
 end
-
