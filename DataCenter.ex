@@ -61,10 +61,6 @@ defmodule NameServer do
   def handle_cast(request, state) do
     super(request, state)
   end
- 
-  def hande_info(_msg, state) do
-    {:noreply, state}
-  end
 end
 
 defmodule TopSupervisor do
