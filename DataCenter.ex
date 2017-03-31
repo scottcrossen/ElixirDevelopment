@@ -484,25 +484,25 @@ defmodule Slave2 do
   end
 end
 
-{response1,name_server} = NameServer.start_link()
-response2 = TopSupervisor.start_link( name_server )
-IO.puts("Crashing Info (Dependencies: Null)")
-Crasher.crash(name_server, :Info)
-:timer.sleep(3000);
-IO.puts("Crashing Order (Dependencies: User)")
-Crasher.crash(name_server, :Order)
-:timer.sleep(3000);
-IO.puts("Crashing User (Dependencies: Order)")
-Crasher.crash(name_server, :User)
-:timer.sleep(3000);
-IO.puts("Crashing CustomerService (Dependencies: Null)")
-Crasher.crash(name_server, :CustomerService)
-:timer.sleep(3000);
-IO.puts("Crashing Shipper (Dependencies: Null)")
-Crasher.crash(name_server, :Shipper)
-:timer.sleep(3000);
-IO.puts("Crashing Database (Dependencies: Info, Order, Shipper, User)")
-Crasher.crash(name_server, :Database)
+#{response1,name_server} = NameServer.start_link()
+#response2 = TopSupervisor.start_link( name_server )
+#IO.puts("Crashing Info (Dependencies: Null)")
+#Crasher.crash(name_server, :Info)
+#:timer.sleep(3000);
+#IO.puts("Crashing Order (Dependencies: User)")
+#Crasher.crash(name_server, :Order)
+#:timer.sleep(3000);
+#IO.puts("Crashing User (Dependencies: Order)")
+#Crasher.crash(name_server, :User)
+#:timer.sleep(3000);
+#IO.puts("Crashing CustomerService (Dependencies: Null)")
+#Crasher.crash(name_server, :CustomerService)
+#:timer.sleep(3000);
+#IO.puts("Crashing Shipper (Dependencies: Null)")
+#Crasher.crash(name_server, :Shipper)
+#:timer.sleep(3000);
+#IO.puts("Crashing Database (Dependencies: Info, Order, Shipper, User)")
+#Crasher.crash(name_server, :Database)
 
 
 
