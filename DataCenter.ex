@@ -484,8 +484,8 @@ defmodule Slave2 do
   end
 end
 
-#{response1,name_server} = NameServer.start_link()
-#response2 = TopSupervisor.start_link( name_server )
+{response1,name_server} = NameServer.start_link()
+response2 = TopSupervisor.start_link( name_server )
 #IO.puts("Crashing Info (Dependencies: Null)")
 #Crasher.crash(name_server, :Info)
 #:timer.sleep(3000);
@@ -503,6 +503,9 @@ end
 #:timer.sleep(3000);
 #IO.puts("Crashing Database (Dependencies: Info, Order, Shipper, User)")
 #Crasher.crash(name_server, :Database)
+#:timer.sleep(3000);
+#IO.puts("Crashing Unknown (Dependencies: Null)")
+#Crasher.crash(name_server, :Unknown)
 
 
 
