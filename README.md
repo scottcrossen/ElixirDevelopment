@@ -11,13 +11,9 @@ some of the requirements for the BYU course titled CS 330. This repository is wr
 
 Project details can be found in the appropriate links below.
 
-##### Lab 12 - Elixir Basics
+[Lab 12 - Elixir Basics](http://liftothers.org/dokuwiki/doku.php?id=cs330_f2016:erlang1)
 
-<http://liftothers.org/dokuwiki/doku.php?id=cs330_f2016:erlang1>
-
-##### Lab 13 - Elixir Data Center
-
-<http://liftothers.org/dokuwiki/doku.php?id=cs330_f2016:labz>
+[Lab 13 - Elixir Data Center](http://liftothers.org/dokuwiki/doku.php?id=cs330_f2016:labz)
 
 ### Contributors
 
